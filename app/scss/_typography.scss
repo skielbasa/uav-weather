@@ -1,0 +1,205 @@
+// Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+// Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+b,
+strong {
+	font-weight: bold;
+}
+
+// Address styling not present in Safari and Chrome.
+dfn {
+	font-style: italic;
+}
+
+// Address styling not present in IE 8/9.
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+	font-size: 80%;
+}
+
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+// Contain overflow in all browsers.
+pre {
+	overflow: auto;
+}
+
+// Address odd `em`-unit font size rendering in all browsers.
+code, kbd, pre, samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+body {
+	font-size: 16px;
+	color: $darkgrey;
+	@include font-stack-body;
+	@include breakpoint($grandpa-bear, min) {
+		font-size: 20px;
+	}
+}
+
+// Headers
+h1,
+.h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+h2,
+.h2 {
+	font-size: 1.75em;
+}
+
+h3,
+.h3 {
+	font-size: 1.5em;
+}
+
+h4,
+.h4 {
+	font-size: 1.25em;
+}
+
+h5,
+.h5 {
+	font-size: 1em;
+	margin: 0 0 $padding/3 0;
+}
+
+h6,
+.h6 {
+	font-size: 0.75em;
+}
+
+// Links
+// Remove the gray background color from active links in IE 10.
+a {
+	background: transparent;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+
+	}
+	&:active,
+	&:hover {
+		// Improve readability when focused and also mouse hovered in all browsers.
+		outline: 0;
+	}
+}
+
+// Blockquotes
+blockquote {
+	font-size: 1.125em;
+	font-style: italic;
+	background: $lightgrey;
+	padding: 1px $padding*1.5; // 1px to prevent margin collapse
+	border-left: 0.5rem solid $cyan;
+	margin: 0;
+}
+
+//==========================================================================
+// Open Type Features
+//==========================================================================
+
+// 1. Turn on kerning, standard ligatures, and proportional, oldstyle numerals
+//    Turn off all other ligatures, tabular, lining numerals, and alternates
+
+html,
+body {
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0; /* 1. */
+}
+
+// Headings
+//==========================================================================
+
+// 1. Turn on discretionary ligatures for larger headings
+
+h1,
+h2,
+h3,
+h4 {
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1; /* 1. */
+}
+
+// Text-level semantics
+//==========================================================================
+
+// 1. Change all letters to uppercase
+// 2. Turn on small caps for upper and lowercase letters
+
+abbr {
+  text-transform: uppercase; /* 1 */
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1; /* 2 */
+}
+
+time {
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+}
+
+// 1. Turn off kerning and ligatures,
+//    Turn on lining, tabular numerals, slashed zero
+pre,
+kbd,
+samp,
+code {
+  font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1; /* 1. */
+}
+
+// 1. Turn on proper supercript numerals
+sup {
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1; /* 1. */
+}
+
+// 1. Turn on proper subscript numerals
+sub {
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1; /* 1. */
+}
+
+// Forms
+//==========================================================================
+
+// 1. Turns on lining, proportional numerals without clarified zeroes
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="range"],
+input[type="tel"],
+input[type="week"], {
+  font-feature-settings: "kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0; /* 1. */
+}
+
+table {
+  font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1; /* 1. */
+}
+
+// 1. Revert to defaults for table headings
+table thead,
+table tfoot {
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0; /* 2. */
+}

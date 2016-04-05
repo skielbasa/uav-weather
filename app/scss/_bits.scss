@@ -1,0 +1,44 @@
+// Colors
+$warn : #f7a347;
+$alert : #ff4242;
+$success : #d4ee5e;
+
+$lightest : #00dffc;
+$light : #00b4cc;
+$medium : #008c9e;
+$dark : #005f6b;
+
+$lightgrey : #f0f2eb;
+$midgrey : #343838;
+$darkgrey : #2e2633;
+
+// Values
+$rootPadding : 2rem;
+$padding : 2em;
+
+// Breakpoints
+$baby-bear    : 25rem; 			// 400px  (Mobile)
+$mama-bear    : 49rem; 	        // 784px  (Tablet)
+$papa-bear    : 75rem;			// 1200px (Desktop)
+$grandpa-bear : 100rem;			// 1600px (Large Desktop)
+
+// Breakpoint mixin
+@mixin breakpoint($point, $direction) {
+	@media (#{$direction}-width: $point) { @content; }
+}
+
+// USAGE
+// $point = breakpoint size (variable or vlaue)
+// $direction = min or max width (must pass 'min' or 'max')
+
+
+// Mixins
+@mixin transition($speed) {
+	transition: all $speed cubic-bezier(0.37, 0, 0.45, 0.99);
+}
+@mixin font-stack-body {
+	font-family: 'Open Sans', sans-serif;
+}
+@mixin font-stack-header {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
