@@ -19,10 +19,6 @@ module.exports = {
 				test: /\.js$/,
 				include: __dirname + '/app',
 				loader: 'babel-loader'
-			},
-			{
-				test: /\.scss$/,
-				loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]
 			}
 		]
 	},
