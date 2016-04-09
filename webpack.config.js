@@ -5,6 +5,9 @@ var	HtmlWebpackPluginConfig = new HtmlWebpackPlugin( {
 	inject: 'body'
 } );
 
+var precss = require( 'precss' );
+var autoprefixer = require( 'autoprefixer' );
+
 module.exports = {
 	entry: [
 		'./app/index.js'
@@ -22,9 +25,14 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]
+				loader: 'style-loader!css-loader!postcss-loader!sass'
 			}
 		]
+	},
+	postcss: function() {
+
+		return [ precss, autoprefixer ];
+
 	},
 	plugins: [
 		HtmlWebpackPluginConfig
