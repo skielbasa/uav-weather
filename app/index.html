@@ -6,11 +6,37 @@
     <title>UAV Weather</title>
     <meta name="description" content="An RC aircraft flight companion. Always know if it's safe to take to the air.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./main.css">
+	<!--<link rel="stylesheet" href="./main.css">-->
 </head>
 <body>
 <svg xmlns="http://www.w3.org/currentColor/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none; margin: 0; padding: 0;">
   <defs>
+
+    <symbol id="forward-arrow-icon" viewBox="0 0 12 12">
+        <title>Arrow</title>
+        <g fill="none" fill-rule="evenodd">
+            <path d="M6 .67l-.94.94 3.72 3.73H.68v1.34h8.1L5.06 10.4l.94.93L11.33 6 6 .67z" fill="currentColor"/>
+        </g>
+    </symbol>
+
+    <symbol id="logo" viewBox="0 0 89 30">
+        <title>UAV Weather</title>
+        <g fill="none" fill-rule="evenodd">
+            <text font-family="Open Sans Condensed, OpenSans-CondensedBold" font-size="16" font-style="condensed" font-weight="bold" fill="#2E2633" transform="translate(-2)">
+                <tspan x="33" y="17">UAV</tspan>
+                <tspan x="33" y="31">WEATHER</tspan>
+            </text>
+            <g stroke-width="2.82">
+                <path d="M19.12 26.42c-2.16-2.17-5.7-2.14-7.9.06m-8.05-7.6c2.16-2.17 2.13-5.7-.07-7.9m24.07 0c-2.17 2.15-2.14 5.7.06 7.9" stroke="#F8A347"/>
+                <g transform="translate(2 2)" stroke="#2E2633">
+                    <ellipse cx="5.63" cy="5.54" rx="5.63" ry="5.54"/>
+                    <ellipse cx="20.77" cy="5.54" rx="5.63" ry="5.54"/>
+                    <ellipse cx="5.63" cy="20.23" rx="5.63" ry="5.54"/>
+                    <ellipse cx="20.77" cy="20.23" rx="5.63" ry="5.54"/>
+                </g>
+            </g>
+        </g>
+    </symbol>
 
 	<symbol id="noflyzone-icon" viewBox="0 0 15 16">
 		<title>No Fly Zone</title>
@@ -55,7 +81,7 @@
 		</g>
 	</symbol>
 
-	<symbol  id="location" viewBox="0 0 10 14">
+	<symbol id="location-icon" viewBox="0 0 10 14">
 		<title>Location</title>
 		<g fill-rule="evenodd">
 			<path d="M5 .33C2.42.33.33 2.43.33 5 .33 8.5 5 13.67 5 13.67S9.67 8.5 9.67 5C9.67 2.42 7.57.33 5 .33zm0 6.34c-.92 0-1.67-.75-1.67-1.67 0-.92.75-1.67 1.67-1.67.92 0 1.67.75 1.67 1.67 0 .92-.75 1.67-1.67 1.67z" fill="currentColor"/>
